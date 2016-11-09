@@ -1,7 +1,6 @@
 # SSRS : BI Tools for Android & iOS
 
 1. To modify the Web.config file for Report Server:
-
 Open the Web.config file in a text editor. By default, the file is located in the <install>\ReportServer directory.
 Locate the <identity> element and set the Impersonate attribute to false. * <identity impersonate="false" /> *
 Locate the <authentication> element and change the Mode attribute to Forms.
@@ -11,10 +10,8 @@ Add the following <forms> element as a child of the <authentication> element and
 	<forms loginUrl="logon.aspx" name="sqlAuthCookie" timeout="60" path="/"></forms>
 </authentication>
 ```
-
 2. To add a code group for your custom security extension that grants FullTrust permission for your extension. You do this by adding the code group to the RSSrvPolicy.config file.
 To modify the RSSrvPolicy.config file
-
 Open the RSSrvPolicy.config file located in the <install>\ReportServer directory.
 Add the following <CodeGroup> element after the existing code group in the security policy file that has a URL membership of $CodeGen as indicated below and then add an entry as follows to RSSrvPolicy.config. Make sure to change the below path according to your ReportServer installation directory:
 ```
@@ -31,7 +28,6 @@ Add the following <CodeGroup> element after the existing code group in the secur
 </CodeGroup>
 ```
 3. To modify the RSReportServer.config file
-
 Open the RSReportServer.config file with Visual Studio or a simple text editor such as Notepad. RSReportServer.config is located in the <install>\ReportServer directory.
 Locate the <AuthenticationTypes> element and modify the settings as follows:
 ```
@@ -72,7 +68,6 @@ Locate the <UI> element and update it as follows:
 	<PageCountMode>Estimate</PageCountMode>
 </UI>
 ```
-
 4. To deploy the sample
 * Copy Microsoft.Samples.ReportingServices.CustomSecurity.dll and Microsoft.Samples.ReportingServices.CustomSecurity.pdb to the <install>\ReportServer\bin directory.
 * Copy Microsoft.Samples.ReportingServices.CustomSecurity.dll and Microsoft.Samples.ReportingServices.CustomSecurity.pdb to the <install>\ReportManager\bin directory.
