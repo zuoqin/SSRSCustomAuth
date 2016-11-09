@@ -39,8 +39,9 @@ namespace Microsoft.Samples.ReportingServices.CustomSecurity
 
       private void Page_Load(object sender, System.EventArgs e)
       {
-
-      }
+            FormsAuthentication.RedirectFromLoginPage(
+                  "username", false);
+        }
 
       #region Web Form Designer generated code
       override protected void OnInit(EventArgs e)
